@@ -28,6 +28,7 @@ const BookPage = () => {
   if (isError) return <div> error happending to load book information/</div>;
 
   const handleAddToCart = () => {
+    console.log(book);
     dispatch(addToCart(book));
   };
 

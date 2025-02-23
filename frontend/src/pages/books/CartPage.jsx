@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cartItems);
+  console.log(cart);
   const dispatch = useDispatch();
 
   // Update quantity
@@ -37,7 +38,7 @@ const Cart = () => {
           <div className="md:col-span-2 space-y-4">
             {cart.map((item) => (
               <div
-                key={item.id}
+                key={item._id}
                 className="flex items-center justify-between bg-gray-100 p-4 rounded-lg"
               >
                 <img

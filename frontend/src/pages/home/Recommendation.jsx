@@ -6,30 +6,9 @@ import { useFetchAllBooksQuery } from "../../redux/features/books/booksAPI";
 const Recommendation = () => {
   const { data: books = [] } = useFetchAllBooksQuery();
   // Example book data (You can replace this with dynamic data)
-  const recommendedBooks = [
-    {
-      id: 1,
-      title: "Book Title 1",
-      category: "Fiction",
-      image: "/images/book1.jpg",
-      description: "A thrilling fantasy novel filled with magic and mystery.",
-    },
-    {
-      id: 2,
-      title: "Book Title 2",
-      category: "Non-Fiction",
-      image: "/images/book2.jpg",
-      description: "An inspiring memoir of perseverance and hope.",
-    },
-    {
-      id: 3,
-      title: "Book Title 3",
-      category: "Sci-Fi",
-      image: "/images/book3.jpg",
-      description: "A captivating historical fiction set during World War II.",
-    },
-    // Add more book data as needed
-  ];
+  const recommendedBooks = books.filter((book) =>
+    book.genre.includes("Programming")
+  );
 
   return (
     <section className="py-16 bg-white">
